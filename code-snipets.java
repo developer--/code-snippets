@@ -25,8 +25,6 @@
     }
 
 
-
-
     //POST StringRequest using Volley
 
     private void makePostRequest() {
@@ -57,3 +55,4 @@
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+
