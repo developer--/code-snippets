@@ -4,10 +4,9 @@
 
     private JsonArrayRequest jsonArrayRequest;
     private RequestQueue queue;
-
     private void getDataFromServer(String url){
         if (queue == null){
-            queue = new Volley().newRequestQueue(getActivity());
+            queue = new Volley().newRequestQueue(mActivity);
         }
         if (jsonArrayRequest == null){
             jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
@@ -23,5 +22,4 @@
             });
         }
         queue.add(jsonArrayRequest);
-
     }
