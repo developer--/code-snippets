@@ -31,7 +31,7 @@
         // Add custom implementation, as needed.
         final String value1 = "Jemo";
         final String value2 = "Mgebrishvili";
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, REGISTER_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
