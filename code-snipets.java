@@ -24,7 +24,7 @@
         queue.add(jsonArrayRequest);
     }
 
-
+//--------------------------------------------------------------------------------------
     //POST StringRequest using Volley
 
     private void makePostRequest() {
