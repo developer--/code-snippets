@@ -2,9 +2,9 @@
 public void saveIntoPrefs(String...values){
 	SharedPreferences prefs = getSharedPreferences(PREFERENCE_NAME, Activity.MODE_PRIVATE);
 	SharedPreferences.Editor editor = prefs.edit();
-	prefs.putString(Key1,values[0]);
-	prefs.putString(Key2,values[1]);
-	prefs.putString(Key3,values[2]);
+	editor.putString(Key1,values[0]);
+	editor.putString(Key2,values[1]);
+	editor.putString(Key3,values[2]);
 	editor.apply();
 }
 
