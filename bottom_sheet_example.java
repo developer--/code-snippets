@@ -21,7 +21,7 @@
      * BottomSheet init
      */
     private void initBottomSheet(){
-        bottomSheet = yourRootView.findViewById(R.id.bottom_sheet);
+        bottomSheet = mCoordinatorRootViewLayout.findViewById(R.id.bottom_sheet);
         behavior = BottomSheetBehavior.from(bottomSheet);
     }
 
