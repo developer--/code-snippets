@@ -1,2 +1,2 @@
 # code-snippets
-code snippents
+code snippents for android development
