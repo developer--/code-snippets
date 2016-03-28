@@ -15,10 +15,15 @@
                         if (MainActivity.fabMenu != null) {
                             MainActivity.fabMenu.setVisibility(View.VISIBLE);
                         }
+                        doBack();
                         return true;
                     }
                     return false;
                 }
             });
         }
+    }
+
+    public void doBack() {
+        getActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
