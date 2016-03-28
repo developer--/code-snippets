@@ -27,3 +27,9 @@
     public void doBack() {
         getActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
+
+
+    //get typeface
+    private Typeface getTypeFace(){
+        return Typeface.createFromAsset(mContext.getAssets(),"my_font.ttf");
+    }
