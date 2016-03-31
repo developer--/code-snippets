@@ -83,5 +83,28 @@ public class MyOptionsHelper  {
         }
     }
 
+    /**
+     * დავსტარტოთ UploadActivity და გავატანოთ სურათის Uri
+     * @param uri გადაღებული ან მიმაგრებული ფოტოს Uri
+     */
+    private void startUploadActivity(Uri uri){
+        Intent intent = new Intent(this, UploadActivity.class);
+        intent.putExtra(MyConstants.UPLOAD_IMAGE_URI, uri.toString());
+        startActivity(intent);
+    }
+
+
+    //get image from another activity
+    private void getCapturedImage(){
+        Uri imageUri = Uri.parse(getIntent().getStringExtra(MyConstants.UPLOAD_IMAGE_URI));
+        File file = new File(imageUri.getPath());
+        imageUri = Uri.fromFile(file);
+        Picasso.with(this)
+                .load(imageUri)
+                .fit()
+                .centerCrop()
+                .into(uploadImageView);
+    }
+
 
 
