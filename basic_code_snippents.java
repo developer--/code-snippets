@@ -27,6 +27,17 @@
     public void doBack() {
         getActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
+    
+    
+    /**
+     * ჩავკეცოთ აპპ;
+     */
+    public void minimizeApp() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
+    }
 
 
     //get typeface
