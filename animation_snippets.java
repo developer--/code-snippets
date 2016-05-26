@@ -51,3 +51,41 @@
         // start the animation
         anim.start();
     }
+
+
+
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+            // get the final radius for the clipping circle
+        int finalRadius = Math.max(frameLayout.getWidth(), frameLayout.getHeight()) / 2;
+        // create the animator for this view (the start radius is zero)
+        Animator anim =
+                ViewAnimationUtils.createCircularReveal(frameLayout, (int) motionEvent.getX(), (int) motionEvent.getY(), 0, finalRadius*2);
+
+        anim.start();
+        return false;
+    }
+
+
+
+
+
+    private void sharedTrasitionAnimation(){
+        Pair<View, String> p1 = Pair.create((View) staticImage[0], "transition_name_1");
+        Pair<View, String> p2 = Pair.create((View) descriptionTextView[0] , "transition_name_2");
+        Pair<View, String> p3 = Pair.create((View) descriptionTextView[1] , "transition_name_3");
+
+        ActivityOptionsCompat options = ActivityOptionsCompat.
+                            makeSceneTransitionAnimation(getActivity(), p1,p2,p3);
+        startActivity(intent, options.toBundle());
+    }
+
+
+
+
+
+
+
+
