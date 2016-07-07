@@ -27,6 +27,17 @@
     public void doBack() {
         getActivity().getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
+    
+    
+    /**
+     * ჩავკეცოთ აპპ;
+     */
+    public void minimizeApp() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
+    }
 
 
     //get typeface
@@ -38,7 +49,7 @@
     /**
     * ჩაკეცილი თუა და ლანჩერით ვხსნით 
     */
-    private void killIfIsnotTaskRoot() {}
+    private void killIfIsnotTaskRoot() {
     if (!isTaskRoot()
                 && getIntent().hasCategory(Intent.CATEGORY_LAUNCHER)
                 && getIntent().getAction() != null
@@ -46,5 +57,18 @@
 
             finish();
             return;
+        }
+    }
+    
+public void sendEmail(){
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("text/plain");
+        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
+        i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
+        i.putExtra(Intent.EXTRA_TEXT   , "body of email");
+        try {
+            startActivity(Intent.createChooser(i, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(MainActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }
     }
