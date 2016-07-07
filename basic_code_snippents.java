@@ -33,3 +33,18 @@
     private Typeface getTypeFace(){
         return Typeface.createFromAsset(mContext.getAssets(),"my_font.ttf");
     }
+
+
+    /**
+    * ჩაკეცილი თუა და ლანჩერით ვხსნით 
+    */
+    private void killIfIsnotTaskRoot() {}
+    if (!isTaskRoot()
+                && getIntent().hasCategory(Intent.CATEGORY_LAUNCHER)
+                && getIntent().getAction() != null
+                && getIntent().getAction().equals(Intent.ACTION_MAIN)) {
+
+            finish();
+            return;
+        }
+    }
