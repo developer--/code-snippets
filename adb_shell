@@ -1,0 +1,11 @@
+//show currenctly running app package
+adb shell dumpsys window windows | grep -E 'mFocusedApp'| cut -d / -f 1 | cut -d " " -f 7 
+
+//show all app packages
+adb shell pm list packages
+
+//show specific app full path
+adb shell pm path targetAppPackage
+
+//copy apk file
+adb pull targetpath.apk /destinationPath
