@@ -1,3 +1,5 @@
 rm -rf .git //recursive remove
 rm -f ./.git/index.lock // remove 
 git reset --mixed origin/master
+
+git clone --recursive examplerepo.git
