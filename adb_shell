@@ -9,3 +9,6 @@ adb shell pm path targetAppPackage
 
 //copy apk file
 adb pull targetpath.apk /destinationPath
+
+//display activities in stack
+adb shell dumpsys activity activities
