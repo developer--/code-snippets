@@ -12,3 +12,8 @@ adb pull targetpath.apk /destinationPath
 
 //display activities in stack
 adb shell dumpsys activity activities
+
+//pull database
+adb -d shell
+run-as com.your.packagename cat databases/database.db > /sdcard/database.db
+adb pull /sdcard/database.db
